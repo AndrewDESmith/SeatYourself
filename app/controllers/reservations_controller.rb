@@ -5,6 +5,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
+    #binding.pry
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
     if @reservation.save
@@ -38,7 +39,7 @@ class ReservationsController < ApplicationController
 
 private
 def reservation_params
-  params.require(:reservation).permit(:start_time,:seats, :restaurant_id)
+  params.require(:reservation).permit(:start_time,:seats,:restaurant_id)
 end
 
 end
