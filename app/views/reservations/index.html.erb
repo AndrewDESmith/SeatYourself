@@ -1,0 +1,13 @@
+<h1>Reservation List</h1>
+<div>
+<%= @title  %>
+<ul>
+  <% @reservations.each do |resevation| %>
+  <li>
+    <%= resevation.start_time %>
+    <%= resevation.seats  %>
+    <%= resevation.user.email  %>
+  </li>
+  <% end %>
+</ul>
+</div>

@@ -1,0 +1,4 @@
+<p>Restaurant Show Page</p>
+<%= @restaurant.name  %>
+<%= link_to("Reservation List", restaurant_reservations_path(@restaurant)) %>
+<%= link_to("Make Reservation", new_restaurant_reservation_path(@restaurant)) %>

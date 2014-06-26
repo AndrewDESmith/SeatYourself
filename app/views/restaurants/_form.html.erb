@@ -1,0 +1,19 @@
+<%= form_for([@user,@restaurant]) do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <fieldset>
+    <legend>Restaurant Categories</legend>
+    <% @categories.each do |cat| %>
+      <div>
+        <%= check_box_tag("category_restaurant_ids_#{cat.id}", cat.id, (!@cat_ids.empty? && @cat_ids.include?(cat.id)), {:name=>"restaurant[category_ids][]"}) %>
+        <%= label_tag "category_restaurant_ids_#{cat.id}",cat.name  %>
+      </div>
+    <% end %>
+  </fieldset>
+  <%= f.hidden_field :user_id %>
+  <div class="actions">
+    <%= f.submit  %>
+  </div>
+<% end %>

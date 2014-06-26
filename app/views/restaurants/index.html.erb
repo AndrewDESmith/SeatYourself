@@ -1,0 +1,16 @@
+<p>This is restaurant index</p>
+<div>
+  <% @categories.each do |cat| %>
+    <div>
+      <p><%=cat.name %></p>
+      <div>
+        <% cat.restaurants.all.each do |restaurant| %>
+          <div>
+            <%= restaurant.name  %>
+            <%= link_to("Show", restaurant_path(restaurant)) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

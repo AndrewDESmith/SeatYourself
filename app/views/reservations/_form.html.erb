@@ -1,0 +1,14 @@
+<%= form_for([@restaurant, @reservation]) do |f| %>
+  <%= f.hidden_field :restaurant_id %>
+  <div class="field">
+    <%= f.label :start_time %>
+    <%= f.datetime_select :start_time %>
+  </div>
+  <div class="field">
+    <%= f.label :seats %>
+    <%= f.number_field :seats %>
+  </div>
+  <div class="actions">
+    <%= f.submit  %>
+  </div>
+<% end %>
